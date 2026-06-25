@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Brand and Editorial Design System Palette */
+  --color-surface-bg: #F5F5F0;
+  --color-surface-card: #FFFFFF;
+  --color-brand-primary: #1A1A1A;
+  --color-brand-secondary: #444440;
+  --color-accent-purple: #EBEBE6;
+  --color-accent-indigo: #1A1A1A;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: rgba(26, 26, 26, 0.7);
+  --color-border-light: rgba(26, 26, 26, 0.1);
+  --color-border-hover: rgba(26, 26, 26, 0.25);
+}
+
+@layer utilities {
+  /* Elegant editorial glassmorphic styling */
+  .glassmorphic-light {
+    background: rgba(245, 245, 240, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .glassmorphic-dark {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Custom Editorial Accent Border wrapper */
+  .ai-glow-border {
+    position: relative;
+    border-radius: 9999px;
+    background: #1A1A1A;
+    padding: 1px;
+  }
+
+  .ai-glow-border > * {
+    background: #FFFFFF;
+    border-radius: 9999px;
+  }
+
+  /* Custom animated scrollbars */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(26, 26, 26, 0.15);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(26, 26, 26, 0.3);
+  }
+}
+
+/* Animations and transitions */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simulated website styles */
+.site-bg-google {
+  background: #FDFDFB;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+}
+.site-bg-netflix {
+  background: #1A1A1A;
+  color: #F5F5F0;
+}
